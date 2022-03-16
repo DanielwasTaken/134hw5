@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Daniel Quach's Portfolio</title>
+  <meta name="author" content="Daniel Quach">
+  <meta name="description" content="This is a portfolio site for cse134B lab 2">
+  <style></style>
+  <script></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="./images/favicon-32x32.png">
+</head>
+<body>
+  <header>
+    <h1>Daniel's Portfolio</h1>
+    <h2>This is my portfolio</h2>
+  </header>
+  <hr>
+  <nav>
+    <details>
+      <summary>Navigation</summary>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="experimental.html">Experimental</a></li>
+        <li><a href="interests.html">Interests</a></li>
+        <li><a href="nativedialogs.html">nativedialogs</a></li>
+        <li><a href="customdialogs.html">customdialogs</a></li>
+        <li><a href="crud.html">crud</a></li>
+        <li><a href="styledcrud.html">styledcrud</a></li>
+      </ul>
+    </details>
+    
+  </nav>
+  <br>
+  <main>
+    <section>
+      <h3>Introduction</h3>
+        <figure>
+          <picture class>
+            <source srcset="/images/me-smaller.jpeg" media="(max-width: 1000px)">
+            <img
+            src="./images/me.JPG"
+            alt=" This is a picture of me">
+          </picture>
+          <figcaption>Me</figcaption>
+        </figure>
+          <p>Hello. I am <span>Daniel Quach</span>, a third year Computer Science student at UCSD. 
+            I have <b>no clue</b> how to make sites look good even with CSS allowed so 
+            I apologize for your eyes in advance.</p>
+          <div class="moves">
+          <p>At least with CSS allowed I can do this :) </p>
+          </div>
+          
+      
+    </section>
+    <aside>
+      <table>
+        <caption>Skills</caption>
+        <colgroup>
+          <col span="1">
+          <col span="1">
+          <!--Not really sure what to do with this without CSS-->
+        </colgroup>
+        <tr>
+          <th>Skill</th>
+          <th>Proficiency</th>
+        </tr>
+        <tr>
+          <td>HTML</td>
+          <td>Intermediate</td>
+        </tr>
+        <tr>
+          <td>CSS</td>
+          <td>Beginner</td>
+        </tr>
+        <tr>
+          <td>CSS</td>
+          <td>Beginner</td>
+        </tr>
+        <tr>
+          <td>Procrastination</td>
+          <td>Godly</td>
+        </tr>
+      </table>
+    </aside>
+  </main>
+
+  <footer>
+    <h3>Contact me</h3>
+    <p><i>(This doesn't work right now)</i></p>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your name">
+      <br><br>
+      <label for="Country">Country</label>
+      <input list="countries" id="Country" name="Country">
+      <datalist id="countries">
+          <option>USA</option>
+          <option>Canada</option>
+          <option>Mexico</option>
+      </datalist>
+      <br><br>
+      <label for="timezone">Timezone</label>
+      <select id="timezone" name="timezone">
+        <optgroup label="Actual Options">
+          <option value="PST">PST</option>
+          <option value="EST">EST</option>
+        </optgroup>
+        <optgroup label="Other">
+          <option value="other">Other :)</option>
+        </optgroup>
+      </select>
+      <br><br>
+      <fieldset>
+        <legend>Is the previous field redundant?</legend>
+        <label for="yes1">Yes</label>
+        <input type="radio" id="yes1">
+        <br>
+        <label for="yes2">Yes</label>
+        <input type="radio" id="yes2">
+      </fieldset>
+      <br><br>
+      <label for="subject">Subject</label>
+      <textarea id="subject" name="subject" placeholder="message"></textarea>
+      <br><br>
+      <input type="submit" value="Submit">
+      <br><br>
+    </form>
+
+  </footer>
+</body>
+
+</html>

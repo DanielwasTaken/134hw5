@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Daniel Quach's Portfolio</title>
+    <meta name="author" content="Daniel Quach">
+    <meta name="description" content="This is a portfolio site for cse134B lab 2">
+    <link rel="icon" type="image/png" href="./images/favicon-32x32.png">
+    <script type="text/javascript" src="purify.min.js"></script>
+</head>
+
+<body>
+    <body>
+        <nav>
+            <details>
+              <summary>Navigation</summary>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experimental.html">Experimental</a></li>
+                <li><a href="interests.html">Interests</a></li>
+                <li><a href="nativedialogs.html">nativedialogs</a></li>
+                <li><a href="customdialogs.html">customdialogs</a></li>
+                <li><a href="crud.html">crud</a></li>
+                <li><a href="styledcrud.html">styledcrud</a></li>
+              </ul>
+            </details>
+            
+          </nav>
+        <button type="button" id="alert">Alert</button>
+        <button type="button" id="confirm">Confirm</button>
+        <button type="button" id="prompt">Prompt</button>
+        <output id="output"></output>
+        <dialog id="dialog">
+            <p id="text">What is your name?</p>
+            <br>
+            <input type="text" id="name">
+            <br>
+            <button type="button" id="cancel">Cancel</button>
+            <button type="button" id="ok">Ok</input>
+            
+            
+        </dialog>
+       
+        
+        <output id="output"></output>
+        <script type="module">
+            import {aFunc, cFunc, pFunc} from './customdialog.js';
+
+            window.onload= () => {
+                let aBut=document.getElementById("alert");
+                let cBut=document.getElementById("confirm");
+                let pBut=document.getElementById("prompt");
+                let dialog=document.getElementById("dialog");
+                let ok = document.getElementById("ok");
+                let cancel = document.getElementById("cancel");
+                let name = document.getElementById("name");
+                let text = document.getElementById("text");
+                let output = document.getElementById("output");
+                aBut.addEventListener("click", ()=>{aFunc(text,ok,cancel,name,dialog,output)});
+                cBut.addEventListener("click", ()=>{cFunc(text,ok,cancel,name,dialog,output)});
+                pBut.addEventListener("click", ()=>{pFunc(text,ok,cancel,name,dialog,output)});
+
+            }
+            
+    
+        </script>
+        
+        
+    
+    
+    
+    </body>

@@ -1,0 +1,1 @@
+I didn't really do much to change the website besides update the navbar and fix one or two little errors tbh. As for the third party scripts I just used google analytics since firebase pretty much set it up and the assignment recommended it.

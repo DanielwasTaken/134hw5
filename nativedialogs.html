@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Daniel Quach's Portfolio</title>
+    <meta name="author" content="Daniel Quach">
+    <meta name="description" content="This is a portfolio site for cse134B lab 2">
+    <link rel="icon" type="image/png" href="./images/favicon-32x32.png">
+    <script type="text/javascript" src="purify.min.js"></script>
+</head>
+
+<body>
+    <body>
+        <nav>
+            <details>
+              <summary>Navigation</summary>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experimental.html">Experimental</a></li>
+                <li><a href="interests.html">Interests</a></li>
+                <li><a href="nativedialogs.html">nativedialogs</a></li>
+                <li><a href="customdialogs.html">customdialogs</a></li>
+                <li><a href="crud.html">crud</a></li>
+                <li><a href="styledcrud.html">styledcrud</a></li>
+              </ul>
+            </details>
+            
+          </nav>
+        <button type="button" id="alert">Alert</button>
+        <button type="button" id="confirm">Confirm</button>
+        <button type="button" id="prompt">Prompt</button>
+        <button type="button" id="saferprompt">Safer Prompt</button>
+        <output id="output"></output>
+        <script>
+
+            window.onload= () => {
+                console.log("loaded")
+                function aFunc(){
+                alert("Alert pressed");
+            }
+            function cFunc(){
+                let response = confirm("Do you confirm this?");
+                output.innerHTML = `Confirm result: ${response}`;
+            }
+            function pFunc(){
+                let response = prompt("What is your name?")
+                if(response == null||response==""){
+                    output.innerHTML = "User didn't enter anything";
+                }
+                else{
+                    output.innerHTML = `Prompt result: ${response}`;
+                }
+            }
+            function sFunc(){
+                let response = prompt("What is your name?")
+                if(response == null||response==""){
+                    output.innerHTML = "User didn't enter anything";
+                }
+                else{
+                    var clean= DOMPurify.sanitize(response);
+                    output.innerHTML = `Prompt result: ${clean}`;
+                }
+            }
+                let aBut=document.getElementById("alert");
+                let cBut=document.getElementById("confirm");
+                let pBut=document.getElementById("prompt");
+                let sBut=document.getElementById("saferprompt");
+                aBut.addEventListener("click", aFunc);
+                cBut.addEventListener("click", cFunc);
+                pBut.addEventListener("click", pFunc);
+                sBut.addEventListener("click", sFunc);
+            }
+            
+    
+        </script>
+        
+        
+    
+    
+    
+    </body>
+    

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Daniel Quach's Portfolio</title>
+    <meta name="author" content="Daniel Quach">
+    <meta name="description" content="This is a portfolio site for cse134B lab 2">
+    <link rel="icon" type="image/png" href="./images/favicon-32x32.png">
+    <script type="text/javascript" src="purify.min.js"></script>
+</head>
+
+<body>
+    <nav>
+        <details>
+          <summary>Navigation</summary>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="experimental.html">Experimental</a></li>
+            <li><a href="interests.html">Interests</a></li>
+            <li><a href="nativedialogs.html">nativedialogs</a></li>
+            <li><a href="customdialogs.html">customdialogs</a></li>
+            <li><a href="crud.html">crud</a></li>
+            <li><a href="styledcrud.html">styledcrud</a></li>
+          </ul>
+        </details>
+        
+      </nav>
+    <ul id="posts">
+        <!--<li><p>First post-1/1/2020-I started a blog <button type="button">Edit </button><button type="button">Delete</button></p></li> -->
+    </ul>
+    <button id="add">Add Blog Post</button>
+    <dialog id="dialog">
+        <p>Post Title:</p>
+        <input type="text" id="title">
+        <br>
+        <p id=>Post Date:</p>
+        <input type="text" id="date">
+        <br>
+        <p id=>Post Summary:</p>
+        <input type="text" id="summary">
+        <br>
+        <button type="button" id="cancel">Cancel</button>
+        <button type="button" id="save">Save</input>
+        <button type="button" id="esave">Save</button>
+        
+        
+    </dialog>
+
+
+    <script type="module">
+        import {createPost, addPost, noPost, edit} from './blog.js';
+
+            window.onload= () => {
+                let titles;
+                let dates;
+                let summaries;
+                let titl = window.localStorage.getItem("titles");
+                let dat = window.localStorage.getItem("dates");
+                let summar = window.localStorage.getItem("summaries");
+                if(titl == null){
+                    titles = ["First post", "Second Post", "Third Post"];
+                    dates = ["1/1/2020", "1/2/2020", "1/3/2020"];
+                    summaries = ["This is my first post", "This is my second post", "I quit"];
+                }
+                else{
+                    titles = JSON.parse(titl);
+                    dates = JSON.parse(dat);
+                    summaries = JSON.parse(summar);
+                }
+                let add=document.getElementById("add");
+                let dialog=document.getElementById("dialog");
+                let save = document.getElementById("save");
+                let cancel = document.getElementById("cancel");
+                let title = document.getElementById("title");
+                let date = document.getElementById("date");
+                let summary = document.getElementById("summary");
+                let list = document.getElementById("posts");
+                let esave = document.getElementById("esave");           
+                add.addEventListener("click", ()=>{createPost(dialog, save, cancel, title, date, summary, list,esave)});
+                save.addEventListener("click", ()=>{addPost(dialog, save, cancel, title, date, summary, list,esave,titles, dates, summaries,-1)});
+                cancel.addEventListener("click", ()=>{noPost(dialog, save, cancel)});
+                for(let i=0; i<titles.length; i++){
+                    title.value = titles[i];
+                    date.value = dates[i];
+                    summary.value = summaries[i];
+                    addPost(dialog, save, cancel, title, date, summary, list,esave, titles, dates, summaries,i);
+                }
+                
+            }
+
+    </script>
+
+
+
+</body>
