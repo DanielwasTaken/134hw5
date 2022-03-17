@@ -25,11 +25,9 @@ body {
     justify-content: center;
     flex-direction: column;
     text-align:center;
-    background-color: gray;
+    background-color: #5b616b;
     font-family: sans-serif, Arial, Helvetica;
-    font-size: var(--fontsize);
-    
-
+    font-size: var(--fontsize);  
 }
 table{
     width: 70%;
